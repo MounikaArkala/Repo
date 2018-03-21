@@ -1,0 +1,34 @@
+package allergy;
+import java.util.*;
+public class Patient {
+private List<Allergy> allergies = new ArrayList<Allergy> ();
+String name;
+int age;
+public Patient(List<Allergy> allergies, String name, int age) {
+	super();
+	this.allergies = allergies;
+	this.name = name;
+	this.age = age;
+}
+public List<Allergy> getAllergies() {
+	return allergies;
+}
+public void setAllergies(List<Allergy> allergies) {
+	this.allergies = allergies;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public int getAge() {
+	return age;
+}
+public void setAge(int age) {
+	this.age = age;
+}
+public static void main(String[] args) {
+	
+}
+}

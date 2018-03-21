@@ -1,0 +1,97 @@
+package temperature;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Temperature {
+	private float temperature;
+    private Location location;
+    private Queue<Temperature> temperaturesList;
+    public Temperature(float temperature, Location location) {
+		super();
+		this.temperature = temperature;
+		this.location = location;
+	}
+    
+	public Temperature() {
+		super();
+		this.temperature = 0;
+		temperaturesList=new LinkedList<Temperature>();
+		
+	}
+
+	public Queue<Temperature> getTemperaturesList() {
+		return temperaturesList;
+	}
+
+	public void setTemperaturesList(Queue<Temperature> temperaturesList) {
+		this.temperaturesList = temperaturesList;
+	}
+
+	public float getTemperature() {
+		return temperature;
+	}
+	 public double getTemperatureInFahrenheit() {
+	        return ( temperature * (9/5.0) + 32 );
+	    }
+	public void setTemperature(float temperature) {
+		this.temperature = temperature;
+	}
+	public Location getLocation() {
+		return location;
+	}
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+	public void addTemperatureToList(Temperature t)
+	{
+		//temperaturesList = ;
+		System.out.println(temperaturesList.size());
+		if(temperaturesList.size()<=5)
+		{
+			temperaturesList.add(t);
+		}
+		else 
+		{
+			temperaturesList.remove();
+			temperaturesList.add(t);
+		}
+			
+	}
+	public static void main(String[] args) {
+		Temperature t1 = new Temperature(98, Location.Mouth);
+		Temperature t2 = new Temperature(103, Location.Ear);
+		Temperature t3 = new Temperature(107, Location.Ear);
+		Temperature t4 = new Temperature(109, Location.Ampit);
+		Temperature t5 = new Temperature(110, Location.Mouth);
+		Temperature t6 = new Temperature(96, Location.Ampit);
+		Temperature t7 = new Temperature(112, Location.Mouth);
+		Temperature t8 = new Temperature(87, Location.Mouth);
+		Temperature t9 = new Temperature(114, Location.Ampit);
+		Temperature t10 = new Temperature(100, Location.Ear);
+		
+		Temperature temp = new Temperature();
+		//Queue<Temperature> temperaturesList = new LinkedList<Temperature>();
+		temp.addTemperatureToList(t1);
+		temp.addTemperatureToList(t2);
+		temp.addTemperatureToList(t3);
+		temp.addTemperatureToList(t4);
+		temp.addTemperatureToList(t5);
+		temp.addTemperatureToList(t6);
+		temp.addTemperatureToList(t7);
+		temp.addTemperatureToList(t8);
+		temp.addTemperatureToList(t9);
+		temp.addTemperatureToList(t10);
+		//temperaturesList.add(e)
+		double totalTemp=0.0;
+		 Queue<Temperature> temperList= temp.getTemperaturesList();
+		for(Temperature t:temperList )
+		{
+			System.out.println(t.temperature);
+			totalTemp =totalTemp+ t.temperature;
+		}
+		System.out.println(totalTemp/5);
+		
+		
+	}
+}

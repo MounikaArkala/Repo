@@ -1,0 +1,27 @@
+package temperature;
+
+public class Temperature {
+	private float temperature;
+    private Location location;
+    public Temperature(float temperature, Location location) {
+		super();
+		this.temperature = temperature;
+		this.location = location;
+	}
+	public float getTemperature() {
+		return temperature;
+	}
+	 public double getTemperatureInFahrenheit() {
+	        return ( temperature * (9/5.0) + 32 );
+	    }
+	public void setTemperature(float temperature) {
+		this.temperature = temperature;
+	}
+	public Location getLocation() {
+		return location;
+	}
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+	
+}

@@ -1,0 +1,58 @@
+package allergy;
+import java.util.*;
+public class Patient {
+private List<Allergy> allergies = new ArrayList<Allergy> ();
+String name;
+int age;
+public Patient(List<Allergy> allergies, String name, int age) {
+	super();
+	this.allergies = allergies;
+	this.name = name;
+	this.age = age;
+}
+public List<Allergy> getAllergies() {
+	return allergies;
+}
+public void setAllergies(List<Allergy> allergies) {
+	this.allergies = allergies;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public int getAge() {
+	return age;
+}
+public void setAge(int age) {
+	this.age = age;
+}
+public static void main(String[] args) {
+	Allergy allergy1 = new Allergy("allergy1", "red skin", Severity.LOW, Reporter.RELATIVE, new Date(1233));
+	Allergy allergy2 = new Allergy("allergy2", "blue skin", Severity.MEDIUM, Reporter.DOCTOR, new Date(998653));
+	Allergy allergy3 = new Allergy("allergy3", "pink skin", Severity.HIGH, Reporter.RELATIVE, new Date(84854));
+	Allergy allergy4 = new Allergy("allergy4", "brown skin", Severity.LOW, Reporter.PATIENT, new Date(3877854));
+	List<Allergy> allergies1 = new ArrayList<Allergy> ();
+	allergies1.add(allergy1);
+	allergies1.add(allergy2);
+	Patient p1 = new Patient(allergies1, "mounika", 24);
+	List<Allergy> allergies2 = new ArrayList<Allergy> ();
+	allergies2.add(allergy3);
+	allergies2.add(allergy4);
+	Patient p2 = new Patient(allergies2, "sagar", 25);
+	List<Patient> patients = new ArrayList<Patient>();
+	patients.add(p1);
+	patients.add(p2);
+	//patients.add(p3);
+	for(Patient p: patients)
+	{
+		System.out.println(p.name);
+		for(Allergy a: p.allergies)
+			System.out.println(a.getName()+" "+a.getSeverity());
+			
+	}
+	
+	
+}
+}

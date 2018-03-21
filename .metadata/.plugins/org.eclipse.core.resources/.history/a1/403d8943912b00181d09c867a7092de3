@@ -1,0 +1,42 @@
+package medication;
+
+import java.util.List;
+
+public class Medication {
+	private String name;
+	private String disease;
+	private String composition;
+	private String details;
+	private List<Frequency> frequencyList;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getDisease() {
+		return disease;
+	}
+	public void setDisease(String disease) {
+		this.disease = disease;
+	}
+	public String getComposition() {
+		return composition;
+	}
+	public void setComposition(String composition) {
+		this.composition = composition;
+	}
+	public String getDetails() {
+		return details;
+	}
+	public void setDetails(String details) {
+		this.details = details;
+	}
+	public List<Frequency> getFrequencyList() {
+		return frequencyList;
+	}
+	public void setFrequencyList(List<Frequency> frequencyList) {
+		this.frequencyList = frequencyList;
+	}
+	
+}

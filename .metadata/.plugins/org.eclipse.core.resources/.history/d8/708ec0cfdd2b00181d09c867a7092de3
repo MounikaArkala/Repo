@@ -1,0 +1,66 @@
+package patient;
+
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.GregorianCalendar;
+import java.util.List;
+
+public class Patient {
+private String name;
+private int age;
+private Calendar lastSeen;
+
+Patient(){}
+Patient(String name, int age, Calendar lastSeen)
+{
+	this.name = name;
+	this.age = age;
+	this.lastSeen = lastSeen;
+	//this.patients =patients;
+}
+public Calendar getLastSeen() {
+	return lastSeen;
+}
+public int getAge() {
+	return age;
+}
+public String getName() {
+	return name;
+}
+public void displayRecentThreePatients(List<Patient> patients)
+{
+	Collections.sort(patients,  new LastSeenComparator());
+	int i=0;
+	for(Patient p:patients)
+	{i++;
+		System.out.println(p.name+" "+p.age);
+		if(i==3)
+			break;
+	}
+	
+}
+public static void main(String[] args) {
+	Calendar calendar1 = new GregorianCalendar(2013,1,28,13,24,56);
+	Calendar calendar2 = new GregorianCalendar(2014,1,28,13,24,56);
+	Patient p1 = new Patient("mounika", 24, calendar1); 
+	Patient p2 = new Patient("tom", 25, calendar2);
+	List<Patient> patients=new ArrayList<Patient>();;
+	patients.add(p1);
+	patients.add(p2);
+	for(Patient p:patients)
+	{
+		System.out.println(p.name+" "+p.age);
+	}
+	Patient p = new Patient();
+	p.displayRecentThreePatients(patients);
+	/*Collections.sort(patients,  new LastSeenComparator());
+	for(Patient p:patients)
+	{
+		System.out.println(p.name+" "+p.age);
+	}*/
+}
+}
+
+

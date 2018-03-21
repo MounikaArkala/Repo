@@ -1,0 +1,9 @@
+package medication;
+
+public class Medication {
+	private String name;
+	private String disease;
+	private String composition;
+	private String details;
+	private List<Frequency> frequencyList;
+}

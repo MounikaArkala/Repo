@@ -1,0 +1,53 @@
+package patient;
+import java.util.*;
+public class PatientList {
+private List<Patient> patients = new ArrayList<Patient>();
+
+public PatientList(List<Patient> patients) {
+	super();
+	this.patients = patients;
+}
+
+public List<Patient> getPatients() {
+	return patients;
+}
+
+public void setPatients(List<Patient> patients) {
+	this.patients = patients;
+}
+public void displayRecentThreePatients(List<Patient> patients)
+{
+	Collections.sort(patients,  new LastSeenComparator());
+	int i=0;
+	for(Patient p:patients)
+	{i++;
+		System.out.println(p.getName()+" "+p.getAge());
+		if(i==3)
+			return;
+	}
+	
+}
+public static void main(String[] args) {
+	Calendar calendar1 = new GregorianCalendar(2013,1,28,13,24,56);
+	Calendar calendar2 = new GregorianCalendar(2014,1,28,13,24,56);
+	Calendar calendar3 = new GregorianCalendar(2014,3,28,13,24,56);
+	Calendar calendar4 = new GregorianCalendar(2013,4,28,13,24,56);
+	Calendar calendar5 = new GregorianCalendar(2014,5,28,13,24,56);
+	Calendar calendar6 = new GregorianCalendar(2014,6,28,13,24,56);
+	Patient p1 = new Patient("mounika", 24, calendar1); 
+	Patient p2 = new Patient("tom", 25, calendar2);
+	Patient p3 = new Patient("sai", 24, calendar3); 
+	Patient p4 = new Patient("sairam", 25, calendar4);
+	Patient p5 = new Patient("jai sai", 24, calendar5); 
+	Patient p6 = new Patient("sai nath", 25, calendar6);
+	List<Patient> patients=new ArrayList<Patient>();
+	patients.add(p1);
+	patients.add(p2);
+	patients.add(p3);
+	patients.add(p4);
+	patients.add(p5);
+	patients.add(p6);
+	PatientList p = new PatientList(patients);
+	p.displayRecentThreePatients(patients);
+}
+}

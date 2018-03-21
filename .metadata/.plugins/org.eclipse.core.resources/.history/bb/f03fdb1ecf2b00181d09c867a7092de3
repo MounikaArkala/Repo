@@ -1,0 +1,7 @@
+package allergy;
+import java.util.*;
+public class Patient {
+private List<Allergy> allergies = new ArrayList<Allergy> ();
+String name;
+int age;
+}

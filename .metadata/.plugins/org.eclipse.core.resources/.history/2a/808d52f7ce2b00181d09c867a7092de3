@@ -1,0 +1,50 @@
+package allergy;
+
+import java.util.Date;
+
+public class Allergy {
+String name;
+String symptoms;
+Severity severity;
+Reporter reporter;
+Date timeReported;
+public Allergy(String name, String symptoms, Severity severity, Reporter reporter, Date timeReported) {
+	super();
+	this.name = name;
+	this.symptoms = symptoms;
+	this.severity = severity;
+	this.reporter = reporter;
+	this.timeReported = timeReported;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public String getSymptoms() {
+	return symptoms;
+}
+public void setSymptoms(String symptoms) {
+	this.symptoms = symptoms;
+}
+public Severity getSeverity() {
+	return severity;
+}
+public void setSeverity(Severity severity) {
+	this.severity = severity;
+}
+public Reporter getReporter() {
+	return reporter;
+}
+public void setReporter(Reporter reporter) {
+	this.reporter = reporter;
+}
+public Date getTimeReported() {
+	return timeReported;
+}
+public void setTimeReported(Date timeReported) {
+	this.timeReported = timeReported;
+}
+
+}

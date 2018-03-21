@@ -1,0 +1,48 @@
+package medication;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
+import medication.Frequency.PartoftheDay;
+
+public class Patient {
+	private String name;
+	private int age;
+	private List<Medication> medications;
+	public Patient(String name, int age, List<Medication> medications) {
+		this.name = name;
+		this.age = age;
+		this.medications = medications;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public List<Medication> getMedications() {
+		return medications;
+	}
+	public void setMedications(List<Medication> medications) {
+		this.medications = medications;
+	}
+	
+	public static void main(String[] args) {
+		Frequency freq1 = new Frequency(PartoftheDay.Morning);
+		Frequency freq2 = new Frequency(PartoftheDay.Night);
+		List<Frequency> frequencyList = new ArrayList<Frequency>() ;
+		frequencyList.add(freq1);
+		frequencyList.add(freq2);
+			
+			
+		
+}}

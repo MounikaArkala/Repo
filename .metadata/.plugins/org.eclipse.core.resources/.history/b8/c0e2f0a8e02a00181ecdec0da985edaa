@@ -1,0 +1,36 @@
+package patient;
+
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.List;
+
+public class Patient {
+private String name;
+private int age;
+private Calendar lastSeen;
+
+Patient(String name, int age, Calendar lastSeen)
+{
+	this.name = name;
+	this.age = age;
+	this.lastSeen = lastSeen;
+	//this.patients =patients;
+}
+public Calendar getLastSeen() {
+	return lastSeen;
+}
+public static void main(String[] args) {
+	Calendar calendar1 = new GregorianCalendar(2013,1,28,13,24,56);
+	Calendar calendar2 = new GregorianCalendar(2014,1,28,13,24,56);
+	Patient p1 = new Patient("mounika", 24, calendar1); 
+	Patient p2 = new Patient("tom", 25, calendar2);
+	List<Patient> patients=new ArrayList<Patient>();;
+	patients.add(p1);
+	patients.add(p2);
+	 System.out.println("Unsorted Collection : " + patients);
+}
+}
+
+

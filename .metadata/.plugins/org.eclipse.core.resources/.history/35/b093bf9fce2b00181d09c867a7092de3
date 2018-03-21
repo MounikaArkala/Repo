@@ -1,0 +1,11 @@
+package allergy;
+
+import java.util.Date;
+
+public class Allergy {
+String name;
+String symptoms;
+Severity severity;
+Reporter reporter;
+Date timeReported;
+}
